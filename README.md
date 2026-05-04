@@ -1,6 +1,6 @@
-# Solana Alpha Evidence Radar
+# AlphaRadar
 
-Solana Alpha Evidence Radar is a local-first research dashboard for monitoring Solana smart-wallet activity and turning noisy on-chain movement into traceable research leads.
+AlphaRadar is a local-first research dashboard for monitoring Solana smart-wallet activity and turning noisy on-chain movement into traceable research leads.
 
 The project focuses on evidence collection, risk review, and structured analysis. It does not execute trades, store private keys, or generate automated order instructions.
 
@@ -18,4 +18,3 @@ The project focuses on evidence collection, risk review, and structured analysis
 - Redis-backed queue for asynchronous jobs.
 - LangGraph multi-agent analysis workflow.
 - Docker Compose for local-first deployment.
-
