@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -11,6 +13,12 @@ class WalletRepository:
 
     def list(self, limit: int = 50, offset: int = 0) -> list[Wallet]:
         return list(self.db.scalars(select(Wallet).offset(offset).limit(limit)).all())
+
+    def list_active(self, wallet_ids: list[str] | None = None) -> list[Wallet]:
+        stmt = select(Wallet).where(Wallet.status == "active").order_by(Wallet.created_at.asc())
+        if wallet_ids:
+            stmt = stmt.where(Wallet.id.in_(wallet_ids))
+        return list(self.db.scalars(stmt).all())
 
     def get(self, wallet_id: str) -> Wallet | None:
         return self.db.get(Wallet, wallet_id)
