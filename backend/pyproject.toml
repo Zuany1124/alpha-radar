@@ -6,8 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "alembic>=1.15.0",
+    "elasticsearch>=8.0.0",
     "fastapi>=0.115.0",
     "langgraph>=0.6.0",
+    "openai>=1.0.0",
     "psycopg[binary]>=3.2.0",
     "pydantic-settings>=2.8.0",
     "redis>=5.2.0",

@@ -6,9 +6,11 @@ from app.db.session import SessionLocal
 from app.models.signal_event import SignalEvent
 from app.repositories.asset_repository import AssetRepository
 from app.repositories.candidate_wallet_repository import CandidateWalletRepository
+from app.repositories.evidence_repository import EvidenceRepository
 from app.repositories.scan_repository import ScanRepository
 from app.repositories.signal_event_repository import SignalEventRepository
 from app.repositories.wallet_repository import WalletRepository
+from app.services.evidence_service import build_evidence_service
 from app.workers.integrations.helius_client import HeliusClient
 from app.workers.integrations.providers import FixtureProvider, HeliusProvider, SolanaActivityProvider
 from app.workers.integrations.scoring import score_signal_events
@@ -85,7 +87,12 @@ def run_scan_job(scan_id: str, db_session=None, settings: Any | None = None) -> 
 
         db.commit()
 
-        graph = build_lead_analysis_graph()
+        evidence_service = build_evidence_service(settings, EvidenceRepository(db))
+        evidence_service.ingest_fixture_file(
+            getattr(settings, "evidence_fixture_path", "tests/fixtures/evidence_fixture.json")
+        )
+
+        graph = build_lead_analysis_graph(db_session=db, evidence_service=evidence_service)
         raw_result = graph.invoke({"scan_id": scan_id, "signal_event_ids": threshold_signal_ids})
         created_lead_count = 1 if threshold_signal_ids and raw_result.get("workflow_status") == "succeeded" else 0
 

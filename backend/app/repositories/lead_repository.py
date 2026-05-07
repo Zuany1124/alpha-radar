@@ -39,3 +39,10 @@ class LeadRepository:
         """按 ID 查询单条 Lead。"""
 
         return self.db.get(Lead, lead_id)
+
+    def create(self, lead: Lead) -> Lead:
+        """创建 Lead。"""
+
+        self.db.add(lead)
+        self.db.flush()
+        return lead
