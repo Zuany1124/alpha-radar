@@ -15,7 +15,12 @@ class Settings(BaseSettings):
     signal_transfers_limit: int = 100
     signal_anomaly_threshold: float = 0.65
     default_embedding_model: str = "text-embedding-3-small"
+    embedding_dimensions: int = 1536
     default_analysis_model: str = "gpt-4.1-mini"
+    evidence_fixture_path: str = "tests/fixtures/evidence_fixture.json"
+    elasticsearch_url: str = ""
+    elasticsearch_api_key: str = ""
+    elasticsearch_evidence_index: str = "alpharadar-evidence"
     langsmith_api_key: str = ""
     langsmith_tracing: bool = False
     langsmith_project: str = "alpharadar-local"

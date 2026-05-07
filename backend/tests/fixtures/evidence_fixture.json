@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "evidence_type": "project_doc",
+      "title": "ALPHA Solana liquidity program",
+      "source_url": "https://example.com/alpha-liquidity",
+      "summary": "ALPHA announced a Solana liquidity program with new incentives and market maker support.",
+      "evidence_metadata": {
+        "asset_symbol": "ALPHA",
+        "asset_mint": "MintAlpha111111111111111111111111111111111"
+      }
+    }
+  ]
+}

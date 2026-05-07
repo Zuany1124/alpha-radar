@@ -37,6 +37,13 @@ class AgentRunRepository:
 
         return self.db.get(AgentRun, agent_run_id)
 
+    def create(self, agent_run: AgentRun) -> AgentRun:
+        """创建 AgentRun。"""
+
+        self.db.add(agent_run)
+        self.db.flush()
+        return agent_run
+
     def get_many(self, agent_run_ids: list[str]) -> list[AgentRun]:
         """按 ID 列表批量查询 AgentRun，并保持输入顺序。"""
 
