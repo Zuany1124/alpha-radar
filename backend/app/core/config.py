@@ -9,6 +9,11 @@ class Settings(BaseSettings):
     helius_api_key: str = ""
     openai_api_key: str = ""
     scan_interval_minutes: int = 30
+    signal_provider: str = "auto"
+    signal_fixture_path: str = "tests/fixtures/solana_signal_fixture.json"
+    signal_history_limit: int = 100
+    signal_transfers_limit: int = 100
+    signal_anomaly_threshold: float = 0.65
     default_embedding_model: str = "text-embedding-3-small"
     default_analysis_model: str = "gpt-4.1-mini"
     langsmith_api_key: str = ""

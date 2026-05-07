@@ -1,9 +1,11 @@
 import json
+import inspect
 import logging
 
 from app.core.config import get_settings
 from app.db.session import SessionLocal
 from app.repositories.scan_repository import ScanRepository
+import app.workers.jobs.scan_job as scan_job_module
 from app.workers.jobs.scan_job import run_scan_job
 from app.workers.queue import QueueClient, RedisQueueClient
 
@@ -42,11 +44,18 @@ class ScanWorkerRunner:
 
         self.scans.mark_running(scan_id)
         try:
-            result = run_scan_job(scan_id)
+            scan_job_module.SessionLocal = lambda: self.scans.db
+            run_scan_job_signature = inspect.signature(run_scan_job)
+            if "db_session" in run_scan_job_signature.parameters:
+                result = run_scan_job(scan_id, db_session=self.scans.db)
+            else:
+                result = run_scan_job(scan_id)
         except Exception as exc:
             logger.exception("Scan job failed: %s", scan_id)
             self.scans.mark_failed(scan_id, str(exc))
             return True
+        finally:
+            scan_job_module.SessionLocal = SessionLocal
 
         self.scans.mark_succeeded(
             scan_id,

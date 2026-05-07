@@ -1,0 +1,50 @@
+{
+  "wallets": {
+    "SeedWallet1111111111111111111111111111111111": {
+      "history": {
+        "transactions": [
+          {
+            "signature": "sig-buy-1",
+            "timestamp": "2026-05-06T00:00:00Z",
+            "type": "SWAP",
+            "source": "JUPITER",
+            "description": "Seed wallet swapped into ALPHA",
+            "tokenTransfers": [
+              {
+                "fromUserAccount": "Pool1111111111111111111111111111111111111",
+                "toUserAccount": "SeedWallet1111111111111111111111111111111111",
+                "mint": "MintAlpha111111111111111111111111111111111",
+                "tokenAmount": 1250,
+                "symbol": "ALPHA",
+                "name": "Alpha Token",
+                "decimals": 6
+              }
+            ],
+            "nativeTransfers": [],
+            "events": {}
+          }
+        ],
+        "pagination": {
+          "nextCursor": null,
+          "hasMore": false
+        }
+      },
+      "transfers": {
+        "data": [
+          {
+            "signature": "transfer-1",
+            "timestamp": 1778025600,
+            "direction": "in",
+            "counterparty": "Counterparty1111111111111111111111111111111",
+            "mint": "MintAlpha111111111111111111111111111111111",
+            "amount": 1250,
+            "symbol": "ALPHA",
+            "name": "Alpha Token",
+            "decimals": 6,
+            "usdValue": 9875.0
+          }
+        ]
+      }
+    }
+  }
+}
