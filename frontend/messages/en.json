@@ -1,0 +1,46 @@
+{
+  "common": {
+    "connect": "Connect Wallet",
+    "disconnect": "Disconnect",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "tokens": "Tokens",
+    "settings": "Settings"
+  },
+  "wallet": {
+    "connect": "Connect Wallet",
+    "connected": "Connected",
+    "notConnected": "Not Connected",
+    "wrongNetwork": "Wrong Network",
+    "switchNetwork": "Switch Network",
+    "balance": "Balance",
+    "address": "Address"
+  },
+  "transaction": {
+    "pending": "Transaction pending...",
+    "success": "Transaction confirmed!",
+    "failed": "Transaction failed",
+    "waitingApproval": "Waiting for wallet approval...",
+    "viewOnExplorer": "View on Explorer"
+  },
+  "home": {
+    "title": "Build the Future of Web3",
+    "subtitle": "A production-ready, pure frontend dApp starter with Next.js 15, React 19, wagmi v2, and RainbowKit.",
+    "getStarted": "Get Started",
+    "viewDocs": "View Documentation"
+  },
+  "footer": {
+    "copyright": "© {year} Web3 dApp. All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  }
+}
