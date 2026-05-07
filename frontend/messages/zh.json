@@ -1,0 +1,46 @@
+{
+  "common": {
+    "connect": "连接钱包",
+    "disconnect": "断开连接",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认",
+    "copy": "复制",
+    "copied": "已复制！"
+  },
+  "nav": {
+    "home": "首页",
+    "dashboard": "仪表盘",
+    "tokens": "代币",
+    "settings": "设置"
+  },
+  "wallet": {
+    "connect": "连接钱包",
+    "connected": "已连接",
+    "notConnected": "未连接",
+    "wrongNetwork": "网络错误",
+    "switchNetwork": "切换网络",
+    "balance": "余额",
+    "address": "地址"
+  },
+  "transaction": {
+    "pending": "交易处理中...",
+    "success": "交易已确认！",
+    "failed": "交易失败",
+    "waitingApproval": "等待钱包确认...",
+    "viewOnExplorer": "在浏览器中查看"
+  },
+  "home": {
+    "title": "构建 Web3 的未来",
+    "subtitle": "一个生产就绪的纯前端 dApp 脚手架，使用 Next.js 15、React 19、wagmi v2 和 RainbowKit。",
+    "getStarted": "开始使用",
+    "viewDocs": "查看文档"
+  },
+  "footer": {
+    "copyright": "© {year} Web3 dApp。保留所有权利。",
+    "terms": "条款",
+    "privacy": "隐私"
+  }
+}

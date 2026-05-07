@@ -1,0 +1,186 @@
+/* Tailwind CSS v4 - CSS-first configuration */
+@import "tailwindcss";
+
+/*
+ * Theme Configuration
+ *
+ * Tailwind v4 uses CSS custom properties for theming.
+ * Define your design tokens here using @theme.
+ *
+ * @see https://tailwindcss.com/docs/v4-beta
+ */
+@theme {
+  /* Colors - Using CSS variables for dark mode support */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Primary colors */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Secondary colors */
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Muted colors */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Accent colors */
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Destructive colors */
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Border and input */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Card colors */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Popover colors */
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Font family */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/*
+ * CSS Variables for Light/Dark Mode
+ *
+ * These variables are toggled by next-themes based on the
+ * 'class' attribute on the html element.
+ */
+:root {
+  --background: oklch(100% 0 0);
+  --foreground: oklch(14.5% 0 0);
+
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(14.5% 0 0);
+
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(14.5% 0 0);
+
+  --primary: oklch(20.5% 0 0);
+  --primary-foreground: oklch(98.5% 0 0);
+
+  --secondary: oklch(96.5% 0 0);
+  --secondary-foreground: oklch(20.5% 0 0);
+
+  --muted: oklch(96.5% 0 0);
+  --muted-foreground: oklch(55.6% 0 0);
+
+  --accent: oklch(96.5% 0 0);
+  --accent-foreground: oklch(20.5% 0 0);
+
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(98.5% 0 0);
+
+  --border: oklch(91.4% 0 0);
+  --input: oklch(91.4% 0 0);
+  --ring: oklch(14.5% 0 0);
+
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(14.5% 0 0);
+  --foreground: oklch(98.5% 0 0);
+
+  --card: oklch(14.5% 0 0);
+  --card-foreground: oklch(98.5% 0 0);
+
+  --popover: oklch(14.5% 0 0);
+  --popover-foreground: oklch(98.5% 0 0);
+
+  --primary: oklch(98.5% 0 0);
+  --primary-foreground: oklch(20.5% 0 0);
+
+  --secondary: oklch(26.9% 0 0);
+  --secondary-foreground: oklch(98.5% 0 0);
+
+  --muted: oklch(26.9% 0 0);
+  --muted-foreground: oklch(70.9% 0 0);
+
+  --accent: oklch(26.9% 0 0);
+  --accent-foreground: oklch(98.5% 0 0);
+
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(98.5% 0 0);
+
+  --border: oklch(26.9% 0 0);
+  --input: oklch(26.9% 0 0);
+  --ring: oklch(83.9% 0 0);
+}
+
+/*
+ * Base Styles
+ */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/*
+ * Scrollbar Styling
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
+
+/*
+ * Selection Styling
+ */
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/*
+ * Focus Visible Styling
+ */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/*
+ * Smooth Scrolling
+ */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
